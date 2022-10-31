@@ -2,7 +2,7 @@
     <string name="app_name">UTSPAB_2024240105</string>
     <string-array name="arr_jalur">
         <item>Jalur Pendaftaran</item>
-        <item>Tes</item>
+        <item>Jalur Tanpa Tes</item>
         <item>Tes tertulis</item>
         <item>Tes Wawancara</item>
         <item>Rekomendasi</item>
