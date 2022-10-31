@@ -36,4 +36,14 @@
         android:layout_marginLeft="20dp"
         android:layout_below="@id/tv_nama"/>
 
+    <TextView
+        android:id="@+id/tv_jalur"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jalur"
+        android:textSize="17sp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/tv_nomor"/>
+
 </RelativeLayout>

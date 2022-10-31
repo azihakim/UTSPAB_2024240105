@@ -13,10 +13,11 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-    private EditText etNama, etNomor;
-    private Spinner spJalur;
-    private CheckBox cbKonfirmasi;
-    private Button btnDaftar;
+    EditText etNama;
+    EditText etNomor;
+    Spinner spJalur;
+    CheckBox cbKonfirmasi;
+    Button btnDaftar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,23 +32,27 @@ public class MainActivity extends AppCompatActivity {
         btnDaftar.setOnClickListener(new View.OnClickListener() {
                                          @Override
                                          public void onClick(View view) {
-                                             String nama, nomor, jalur;
-                                             int selectedID;
-
-                                             nama = etNama.getText().toString();
-                                             nomor = etNomor.getText().toString();
-                                             jalur = spJalur.getSelectedItem().toString();
+                                             String nama = etNama.getText().toString();
+                                             String nomor = etNomor.getText().toString();
+                                             String jalur = spJalur.getSelectedItem().toString();
 
                                              if (nama.trim().equals("")){
                                                  etNama.setError("Nama Tidak Boleh Kosong");
                                              }
-                                             else if (nomor.trim().equals("")){
+                                             else if (nomor.trim().equals("")) {
                                                  etNomor.setError("Nomor Pendaftaran Tidak Boleh Kosong");
                                              }
+                                             else if (jalur.trim().equals("Jalur Pendaftaran")) {
+                                                 Toast.makeText(MainActivity.this, "Pilih jalur pendaftaran", Toast.LENGTH_SHORT).show();
+                                             }
+                                             else if (!(cbKonfirmasi.isChecked())){
+                                                 Toast.makeText(MainActivity.this, "Konfirmasi Daftar!!!", Toast.LENGTH_SHORT).show();
+                                             }
                                              else {
-//                                                 Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
                                                  Intent pindah = new Intent(MainActivity.this, SecondActivity.class);
                                                  pindah.putExtra("xNama", nama);
+                                                 pindah.putExtra("xNomor", nomor);
+                                                 pindah.putExtra("xJalur", jalur);
                                                  startActivity(pindah);
                                              }
                                          }
