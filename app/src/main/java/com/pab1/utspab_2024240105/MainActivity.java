@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setTitle("UTS_M.Abdul Azizul Hakim");
         etNama = findViewById(R.id.et_nama);
         etNomor = findViewById(R.id.et_nomor);
         spJalur = findViewById(R.id.sp_jalur);
